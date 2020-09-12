@@ -29,8 +29,8 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.11</version>
-      <scope>test</scope>
+      <version>4.12</version>
+      <scope>compile</scope>
     </dependency>
 
     <dependency>
@@ -66,6 +66,18 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-test</artifactId>
+      <version>${spring.vsersion}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
+      <version>${spring.vsersion}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-jdbc</artifactId>
       <version>${spring.vsersion}</version>
     </dependency>
 
@@ -126,9 +138,9 @@
     </dependency>
 
     <dependency>
-      <groupId>c3p0</groupId>
+      <groupId>com.mchange</groupId>
       <artifactId>c3p0</artifactId>
-      <version>0.9.1.2</version>
+      <version>0.9.5.5</version>
       <type>jar</type>
     </dependency>
 
