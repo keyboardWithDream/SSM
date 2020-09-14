@@ -5,9 +5,9 @@ import com.study.sevice.IAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -35,5 +35,11 @@ public class AccountController {
         System.out.println(account);
         accountService.saveAccount(account);
         return "forward:/account/findAll";
+    }
+
+    @RequestMapping("/guess")
+    public @ResponseBody() String guess(Integer num, Model model){
+        System.out.println("获取num...");
+        return accountService.guess(num);
     }
 }

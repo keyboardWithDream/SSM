@@ -19,5 +19,9 @@
     <label for="money">金额:</label><input type="number" name="money" id="money" placeholder="金额">
     <input type="submit" value="提交">
 </form>
+<form action="/account/guess" method="post">
+    <input type="number" name="num">
+    <input type="submit" value="GO">
+</form>
 </body>
 </html>

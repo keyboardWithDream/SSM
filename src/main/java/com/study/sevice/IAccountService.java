@@ -21,4 +21,11 @@ public interface IAccountService {
      * @param account 账户信息
      */
     void saveAccount(Account account);
+
+    /**
+     * guess num
+     * @param num 参数num
+     * @return 信息
+     */
+    String guess(Integer num);
 }

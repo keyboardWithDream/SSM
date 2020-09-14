@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Random;
 
 /**
  * @Author Harlan
@@ -28,5 +29,19 @@ public class AccountServiceImpl implements IAccountService {
     public void saveAccount(Account account) {
         System.out.println("业务层: saveAccount");
         accountDao.saveAccount(account);
+    }
+
+    @Override
+    public String guess(Integer num) {
+        Random r = new Random();
+        int res = r.nextInt();
+        System.out.println(res);
+        if (num > res){
+            return "bigger";
+        }else if (num < res){
+            return "smaller";
+        }else {
+            return "right";
+        }
     }
 }
