@@ -19,6 +19,8 @@ public class AccountServiceImpl implements IAccountService {
     @Autowired
     private IAccountDao accountDao;
 
+    private Integer res = new Random().nextInt(10);
+
     @Override
     public List<Account> findAll() {
         System.out.println("业务层: findAll");
@@ -33,14 +35,13 @@ public class AccountServiceImpl implements IAccountService {
 
     @Override
     public String guess(Integer num) {
-        Random r = new Random();
-        int res = r.nextInt();
         System.out.println(res);
         if (num > res){
             return "bigger";
         }else if (num < res){
             return "smaller";
         }else {
+            res = new Random().nextInt(10);
             return "right";
         }
     }

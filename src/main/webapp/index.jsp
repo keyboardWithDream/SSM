@@ -8,7 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>SpringMVC</title>
+    <title>SSM</title>
+    <script src="js/jquery-3.5.1/jquery-3.5.1.js" type="text/javascript"></script>
 </head>
 <body>
 <h1>测试查询</h1>
@@ -19,9 +20,20 @@
     <label for="money">金额:</label><input type="number" name="money" id="money" placeholder="金额">
     <input type="submit" value="提交">
 </form>
-<form action="/account/guess" method="post">
-    <input type="number" name="num">
-    <input type="submit" value="GO">
+<h1 id="show"></h1>
+<form>
+    <input id="num" type="number" name="num">
+    <input id="submit" type="button" value="GO">
 </form>
+<script>
+    $(function () {
+        $("#submit").click(function () {
+            const num = $("#num").val();
+            $.post("/account/guess", {num}, function callback(data){
+                $("#show").html(data);
+            })
+        })
+    })
+</script>
 </body>
 </html>
